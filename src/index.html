@@ -13,6 +13,17 @@
     <h1>Vanilla JavaScript App</h1>
     <h2>Sitio web estático alojado en Azure</h2>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/OwwcaKB40hU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <p>Cargando contenido desde la API: <b id="name">...</b></p>
+    </main>
+
+    <script>
+    (async function() {
+        const { text } = await( await fetch(`/api/message`)).json();
+        document.querySelector('#name').textContent = text;
+    }())
+    </script>
+
   </main>
 
 </body>
